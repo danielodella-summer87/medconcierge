@@ -21,44 +21,32 @@ const COUNTRIES = [
 
 export default function CountriesSection() {
   return (
-    <section id="cobertura" className="scroll-mt-20 bg-white">
-      <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
-        <div className="max-w-2xl">
-          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-brand-teal">
-            <span className="h-px w-8 bg-brand-teal" />
-            Red internacional
-          </span>
-          <h2 className="mt-3 text-3xl font-bold text-brand-navy sm:text-4xl">
-            Cobertura Internacional
-          </h2>
-          <p className="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
-            Con base en Estados Unidos y Uruguay, acompañamos a pacientes y
-            familias en los siguientes países.
-          </p>
-        </div>
+    <section id="cobertura" className="scroll-mt-20 bg-brand-navy-dark">
+      <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 sm:py-7 lg:px-8">
+        <p className="text-center text-xs font-semibold uppercase tracking-wider text-slate-400">
+          Red internacional
+        </p>
 
-        <div className="relative mt-16">
-          <div
-            className="absolute left-0 right-0 top-8 hidden h-px -translate-y-1/2 bg-gradient-to-r from-transparent via-brand-blue/30 to-transparent lg:block"
-            aria-hidden="true"
-          />
-
-          <div className="relative grid grid-cols-2 gap-6 sm:grid-cols-4 lg:gap-4">
-            {COUNTRIES.map((country) => (
-              <div key={country.name} className="flex flex-col items-center gap-3">
-                <div className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-full ring-4 ring-brand-mist transition-transform duration-200 hover:-translate-y-1 hover:shadow-md">
-                  <Image
-                    src={country.flag}
-                    alt={`Bandera de ${country.name}`}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <span className="text-sm font-medium text-brand-navy">
-                  {country.name}
-                </span>
-              </div>
-            ))}
-          </div>
+        <div className="mt-4 grid grid-cols-4 gap-x-4 gap-y-4 sm:flex sm:flex-wrap sm:items-center sm:justify-center sm:gap-x-8 sm:gap-y-3">
+          {COUNTRIES.map((country) => (
+            <div
+              key={country.name}
+              className="flex flex-col items-center gap-1.5 sm:flex-row sm:gap-2"
+            >
+              <span className="relative h-7 w-7 flex-shrink-0 overflow-hidden rounded-full ring-1 ring-white/15">
+                <Image
+                  src={country.flag}
+                  alt={`Bandera de ${country.name}`}
+                  fill
+                  className="object-cover"
+                  sizes="28px"
+                />
+              </span>
+              <span className="text-[11px] font-medium text-slate-300 sm:text-sm">
+                {country.name}
+              </span>
+            </div>
+          ))}
         </div>
       </div>
     </section>
