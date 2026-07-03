@@ -109,8 +109,8 @@ export default function HomeCarousel() {
           />
 
           <div
-            className={`relative flex flex-col ${
-              isCentered ? "items-center text-center" : "items-start text-left"
+            className={`relative flex flex-col items-center text-center ${
+              isCentered ? "lg:items-center lg:text-center" : "lg:items-start lg:text-left"
             }`}
           >
             <h1 className="whitespace-pre-line text-2xl font-bold leading-tight text-white sm:text-3xl">
