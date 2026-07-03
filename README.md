@@ -17,8 +17,8 @@ proyecto de código propio, listo para desplegar en Vercel.
 - Tailwind CSS v4
 - Componentes React separados por sección
 - Sin CMS, sin base de datos
-- Formulario de Contacto y de Familias: solo visuales/controlados, sin
-  envío real todavía
+- Formularios de Contacto, Familias y Viajeros: solo visuales/controlados,
+  sin envío real todavía
 
 ## Páginas
 
@@ -26,7 +26,9 @@ proyecto de código propio, listo para desplegar en Vercel.
   Contacto)
 - `/uruguay` — Programa MedConcierge Familias en Uruguay
 - `/familias` — Formulario de solicitud del Plan MedConcierge Familias
-- `/viajeros` — Landing de MedConcierge Viajeros
+  (datos del contratante y del paciente, incluyendo familiar responsable)
+- `/viajeros` — Landing de MedConcierge Viajeros + formulario de solicitud
+  de consulta
 
 ## Estructura
 
@@ -48,6 +50,7 @@ components/
   CountriesSection.tsx
   ContactSection.tsx
   FamiliasForm.tsx        Formulario de /familias (client component)
+  ViajerosForm.tsx        Formulario de /viajeros (client component)
   Footer.tsx
   icons.tsx               Set de íconos SVG propios (sin librerías externas)
 public/
@@ -76,9 +79,10 @@ npm run start
 
 ## Pendientes conocidos
 
-- Conectar el formulario de Contacto (`components/ContactSection.tsx`) y el
-  formulario de Familias (`components/FamiliasForm.tsx`) a un servicio de
-  envío de email o API cuando se defina.
+- Conectar los formularios de Contacto (`components/ContactSection.tsx`),
+  Familias (`components/FamiliasForm.tsx`) y Viajeros
+  (`components/ViajerosForm.tsx`) a un servicio de envío de email o API
+  cuando se defina.
 - Revisar copy institucional con el equipo de MedConcierge antes de
   publicar en producción.
 - Evaluar si corresponde sumar una sección de sponsors/partners (logos

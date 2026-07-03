@@ -9,6 +9,10 @@ import {
 } from "@/components/icons";
 import medicalImage from "@/public/images/servicio-medico.jpg";
 import auditImage from "@/public/images/servicio-auditoria.jpg";
+import personalizedImage from "@/public/images/servicio-atencion-personalizada.jpg";
+import travelersImage from "@/public/images/viajeros-medconcierge.jpg";
+import distributionImage from "@/public/images/hero-medconcierge.jpg";
+import familiesImage from "@/public/images/familias-adultos-mayores.jpg";
 
 const SERVICES = [
   {
@@ -20,12 +24,14 @@ const SERVICES = [
   },
   {
     icon: UserHeartIcon,
+    image: personalizedImage,
     title: "Atención Personalizada",
     description:
       "Un plan de acompañamiento a medida de cada paciente, con seguimiento cercano y comunicación directa en todo momento.",
   },
   {
     icon: PlaneIcon,
+    image: travelersImage,
     title: "MedConcierge Viajeros",
     description:
       "Soporte médico para viajeros: consultas privadas, segunda opinión y chequeos preventivos antes, durante y después del viaje.",
@@ -39,12 +45,14 @@ const SERVICES = [
   },
   {
     icon: PackageIcon,
+    image: distributionImage,
     title: "Distribución de Insumos y Equipos Médicos",
     description:
       "Gestión y provisión de insumos y equipamiento médico para instituciones y profesionales de la salud.",
   },
   {
     icon: HomeHeartIcon,
+    image: familiesImage,
     title: "MedConcierge Familias",
     description:
       "Servicio de acompañamiento continuo para adultos mayores, con evaluaciones periódicas e informes para la familia.",
@@ -73,31 +81,23 @@ export default function ServicesSection() {
           {SERVICES.map(({ icon: Icon, image, title, description }) => (
             <div
               key={title}
-              className="group flex flex-col overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-slate-200 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg hover:ring-brand-blue/30"
+              className="group flex h-full flex-col overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-slate-200 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg hover:ring-brand-blue/30"
             >
-              {image ? (
-                <div className="relative h-36 w-full">
-                  <Image
-                    src={image}
-                    alt=""
-                    fill
-                    placeholder="blur"
-                    className="object-cover"
-                    sizes="(min-width: 1024px) 360px, 100vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/70 to-transparent" />
-                  <span className="absolute bottom-3 left-3 flex h-10 w-10 items-center justify-center rounded-lg bg-white/15 text-white backdrop-blur-sm">
-                    <Icon className="h-5 w-5" />
-                  </span>
-                </div>
-              ) : (
-                <div className="pt-7 pl-7">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-brand-navy to-brand-blue text-white shadow-sm">
-                    <Icon className="h-6 w-6" />
-                  </span>
-                </div>
-              )}
-              <div className="flex flex-1 flex-col p-7 pt-5">
+              <div className="relative h-36 w-full flex-shrink-0">
+                <Image
+                  src={image}
+                  alt=""
+                  fill
+                  placeholder="blur"
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 360px, 100vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/70 to-transparent" />
+                <span className="absolute bottom-3 left-3 flex h-10 w-10 items-center justify-center rounded-lg bg-white/15 text-white backdrop-blur-sm">
+                  <Icon className="h-5 w-5" />
+                </span>
+              </div>
+              <div className="flex flex-1 flex-col p-7">
                 <h3 className="text-lg font-semibold text-brand-navy">{title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-slate-600">
                   {description}

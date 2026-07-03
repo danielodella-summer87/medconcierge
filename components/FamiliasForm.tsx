@@ -11,7 +11,15 @@ type FormState = {
   contratanteTelefono: string;
   contratanteEmail: string;
   pacienteNombre: string;
-  pacienteDireccion: string;
+  pacienteCalle: string;
+  pacienteCiudad: string;
+  pacientePais: string;
+  pacienteTelefono: string;
+  pacienteEmail: string;
+  pacienteVinculo: string;
+  familiarTelefono: string;
+  familiarDireccion: string;
+  comentarios: string;
 };
 
 const INITIAL_STATE: FormState = {
@@ -22,15 +30,27 @@ const INITIAL_STATE: FormState = {
   contratanteTelefono: "",
   contratanteEmail: "",
   pacienteNombre: "",
-  pacienteDireccion: "",
+  pacienteCalle: "",
+  pacienteCiudad: "",
+  pacientePais: "",
+  pacienteTelefono: "",
+  pacienteEmail: "",
+  pacienteVinculo: "",
+  familiarTelefono: "",
+  familiarDireccion: "",
+  comentarios: "",
 };
+
+const inputClass =
+  "mt-1.5 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm text-slate-800 shadow-sm focus:border-brand-blue focus:outline-none focus:ring-1 focus:ring-brand-blue";
+const labelClass = "block text-sm font-medium text-brand-navy";
 
 export default function FamiliasForm() {
   const [formData, setFormData] = useState<FormState>(INITIAL_STATE);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (
-    event: React.ChangeEvent<HTMLInputElement>,
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = event.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -78,10 +98,7 @@ export default function FamiliasForm() {
         </legend>
         <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2">
           <div className="sm:col-span-2">
-            <label
-              htmlFor="contratanteNombre"
-              className="block text-sm font-medium text-brand-navy"
-            >
+            <label htmlFor="contratanteNombre" className={labelClass}>
               Nombre completo *
             </label>
             <input
@@ -92,15 +109,12 @@ export default function FamiliasForm() {
               value={formData.contratanteNombre}
               onChange={handleChange}
               autoComplete="name"
-              className="mt-1.5 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm text-slate-800 shadow-sm focus:border-brand-blue focus:outline-none focus:ring-1 focus:ring-brand-blue"
+              className={inputClass}
             />
           </div>
 
           <div>
-            <label
-              htmlFor="contratanteCalle"
-              className="block text-sm font-medium text-brand-navy"
-            >
+            <label htmlFor="contratanteCalle" className={labelClass}>
               Calle *
             </label>
             <input
@@ -111,15 +125,12 @@ export default function FamiliasForm() {
               value={formData.contratanteCalle}
               onChange={handleChange}
               autoComplete="address-line1"
-              className="mt-1.5 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm text-slate-800 shadow-sm focus:border-brand-blue focus:outline-none focus:ring-1 focus:ring-brand-blue"
+              className={inputClass}
             />
           </div>
 
           <div>
-            <label
-              htmlFor="contratanteCiudad"
-              className="block text-sm font-medium text-brand-navy"
-            >
+            <label htmlFor="contratanteCiudad" className={labelClass}>
               Ciudad *
             </label>
             <input
@@ -130,15 +141,12 @@ export default function FamiliasForm() {
               value={formData.contratanteCiudad}
               onChange={handleChange}
               autoComplete="address-level2"
-              className="mt-1.5 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm text-slate-800 shadow-sm focus:border-brand-blue focus:outline-none focus:ring-1 focus:ring-brand-blue"
+              className={inputClass}
             />
           </div>
 
           <div>
-            <label
-              htmlFor="contratantePais"
-              className="block text-sm font-medium text-brand-navy"
-            >
+            <label htmlFor="contratantePais" className={labelClass}>
               País *
             </label>
             <input
@@ -149,15 +157,12 @@ export default function FamiliasForm() {
               value={formData.contratantePais}
               onChange={handleChange}
               autoComplete="country-name"
-              className="mt-1.5 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm text-slate-800 shadow-sm focus:border-brand-blue focus:outline-none focus:ring-1 focus:ring-brand-blue"
+              className={inputClass}
             />
           </div>
 
           <div>
-            <label
-              htmlFor="contratanteTelefono"
-              className="block text-sm font-medium text-brand-navy"
-            >
+            <label htmlFor="contratanteTelefono" className={labelClass}>
               Teléfono *
             </label>
             <input
@@ -168,15 +173,12 @@ export default function FamiliasForm() {
               value={formData.contratanteTelefono}
               onChange={handleChange}
               autoComplete="tel"
-              className="mt-1.5 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm text-slate-800 shadow-sm focus:border-brand-blue focus:outline-none focus:ring-1 focus:ring-brand-blue"
+              className={inputClass}
             />
           </div>
 
           <div>
-            <label
-              htmlFor="contratanteEmail"
-              className="block text-sm font-medium text-brand-navy"
-            >
+            <label htmlFor="contratanteEmail" className={labelClass}>
               Email *
             </label>
             <input
@@ -187,7 +189,7 @@ export default function FamiliasForm() {
               value={formData.contratanteEmail}
               onChange={handleChange}
               autoComplete="email"
-              className="mt-1.5 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm text-slate-800 shadow-sm focus:border-brand-blue focus:outline-none focus:ring-1 focus:ring-brand-blue"
+              className={inputClass}
             />
           </div>
         </div>
@@ -198,11 +200,8 @@ export default function FamiliasForm() {
           Datos del paciente
         </legend>
         <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2">
-          <div>
-            <label
-              htmlFor="pacienteNombre"
-              className="block text-sm font-medium text-brand-navy"
-            >
+          <div className="sm:col-span-2">
+            <label htmlFor="pacienteNombre" className={labelClass}>
               Nombre completo *
             </label>
             <input
@@ -213,25 +212,147 @@ export default function FamiliasForm() {
               value={formData.pacienteNombre}
               onChange={handleChange}
               autoComplete="name"
-              className="mt-1.5 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm text-slate-800 shadow-sm focus:border-brand-blue focus:outline-none focus:ring-1 focus:ring-brand-blue"
+              className={inputClass}
             />
           </div>
 
           <div>
-            <label
-              htmlFor="pacienteDireccion"
-              className="block text-sm font-medium text-brand-navy"
-            >
-              Dirección
+            <label htmlFor="pacienteCalle" className={labelClass}>
+              Calle
             </label>
             <input
-              id="pacienteDireccion"
-              name="pacienteDireccion"
+              id="pacienteCalle"
+              name="pacienteCalle"
               type="text"
-              value={formData.pacienteDireccion}
+              value={formData.pacienteCalle}
+              onChange={handleChange}
+              autoComplete="address-line1"
+              className={inputClass}
+            />
+          </div>
+
+          <div>
+            <label htmlFor="pacienteCiudad" className={labelClass}>
+              Ciudad
+            </label>
+            <input
+              id="pacienteCiudad"
+              name="pacienteCiudad"
+              type="text"
+              value={formData.pacienteCiudad}
+              onChange={handleChange}
+              autoComplete="address-level2"
+              className={inputClass}
+            />
+          </div>
+
+          <div>
+            <label htmlFor="pacientePais" className={labelClass}>
+              País
+            </label>
+            <input
+              id="pacientePais"
+              name="pacientePais"
+              type="text"
+              value={formData.pacientePais}
+              onChange={handleChange}
+              autoComplete="country-name"
+              className={inputClass}
+            />
+          </div>
+
+          <div>
+            <label htmlFor="pacienteTelefono" className={labelClass}>
+              Teléfono
+            </label>
+            <input
+              id="pacienteTelefono"
+              name="pacienteTelefono"
+              type="tel"
+              value={formData.pacienteTelefono}
+              onChange={handleChange}
+              autoComplete="tel"
+              className={inputClass}
+            />
+          </div>
+
+          <div>
+            <label htmlFor="pacienteEmail" className={labelClass}>
+              Email
+            </label>
+            <input
+              id="pacienteEmail"
+              name="pacienteEmail"
+              type="email"
+              value={formData.pacienteEmail}
+              onChange={handleChange}
+              autoComplete="email"
+              className={inputClass}
+            />
+          </div>
+
+          <div>
+            <label htmlFor="pacienteVinculo" className={labelClass}>
+              Vínculo respecto al paciente
+            </label>
+            <input
+              id="pacienteVinculo"
+              name="pacienteVinculo"
+              type="text"
+              placeholder="Ej: hijo/a, cónyuge, sobrino/a"
+              value={formData.pacienteVinculo}
+              onChange={handleChange}
+              className={inputClass}
+            />
+          </div>
+
+          <div className="sm:col-span-2 border-t border-slate-100 pt-5">
+            <p className="text-sm font-medium text-brand-navy">
+              Familiar responsable en el país del paciente
+            </p>
+          </div>
+
+          <div>
+            <label htmlFor="familiarTelefono" className={labelClass}>
+              Teléfono del familiar responsable en su país
+            </label>
+            <input
+              id="familiarTelefono"
+              name="familiarTelefono"
+              type="tel"
+              value={formData.familiarTelefono}
+              onChange={handleChange}
+              autoComplete="tel"
+              className={inputClass}
+            />
+          </div>
+
+          <div>
+            <label htmlFor="familiarDireccion" className={labelClass}>
+              Dirección del familiar responsable en su país
+            </label>
+            <input
+              id="familiarDireccion"
+              name="familiarDireccion"
+              type="text"
+              value={formData.familiarDireccion}
               onChange={handleChange}
               autoComplete="street-address"
-              className="mt-1.5 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm text-slate-800 shadow-sm focus:border-brand-blue focus:outline-none focus:ring-1 focus:ring-brand-blue"
+              className={inputClass}
+            />
+          </div>
+
+          <div className="sm:col-span-2">
+            <label htmlFor="comentarios" className={labelClass}>
+              Comentarios adicionales
+            </label>
+            <textarea
+              id="comentarios"
+              name="comentarios"
+              rows={4}
+              value={formData.comentarios}
+              onChange={handleChange}
+              className={inputClass}
             />
           </div>
         </div>
