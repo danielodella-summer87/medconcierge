@@ -46,7 +46,7 @@ export default function PartnersLogoCarousel() {
               <Image
                 src={partner.logo}
                 alt={partner.name}
-                className="max-h-full w-auto object-contain opacity-70 grayscale transition-all duration-200 hover:opacity-100 hover:grayscale-0"
+                className="max-h-full w-auto object-contain transition-transform duration-200 hover:scale-105"
               />
             </div>
           ))}
