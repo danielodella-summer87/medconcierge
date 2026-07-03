@@ -36,37 +36,44 @@ const TRUST_BLOCKS = [
 export default function UruguayPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-gradient-to-br from-brand-navy via-brand-navy to-brand-blue">
-        <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-28">
-          <div>
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm font-medium text-white">
-              <span className="h-1.5 w-1.5 rounded-full bg-brand-teal" />
-              MedConcierge Uruguay
-            </span>
-            <h1 className="mt-4 text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
-              MedConcierge Familias
-            </h1>
-            <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-100/90 sm:text-lg">
-              Programa de evaluación y seguimiento independiente para
-              adultos mayores.
-            </p>
-            <Link
-              href="/familias"
-              className="mt-8 inline-block rounded-md bg-white px-6 py-3 text-sm font-semibold text-brand-navy shadow-sm transition-colors hover:bg-brand-sky"
-            >
-              Solicitar servicio
-            </Link>
-          </div>
+      <section className="relative overflow-hidden bg-brand-navy">
+        <div className="relative h-[480px] w-full sm:h-[520px] lg:h-[560px]">
+          <Image
+            src={uruguayImage}
+            alt="Pareja de adultos mayores acompañada por MedConcierge"
+            fill
+            placeholder="blur"
+            priority
+            className="object-cover object-top"
+            sizes="100vw"
+          />
 
-          <div className="relative hidden overflow-hidden rounded-3xl border border-white/15 shadow-xl lg:block">
-            <Image
-              src={uruguayImage}
-              alt="Pareja de adultos mayores acompañada por MedConcierge"
-              className="h-[360px] w-full object-cover"
-              placeholder="blur"
-              priority
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/85 via-brand-navy/15 to-transparent lg:hidden" />
+
+          <div className="absolute inset-x-4 bottom-8 overflow-hidden rounded-2xl bg-brand-navy/80 p-6 shadow-xl backdrop-blur-sm sm:inset-x-6 sm:p-8 lg:inset-x-auto lg:bottom-auto lg:right-14 lg:top-1/2 lg:w-[460px] lg:-translate-y-1/2 lg:rounded-2xl lg:p-10 lg:shadow-2xl xl:right-20">
+            <div
+              className="bg-cross-pattern pointer-events-none absolute inset-y-0 right-0 w-12 opacity-20"
+              aria-hidden="true"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-brand-navy-dark/80 via-transparent to-transparent" />
+            <div className="relative">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm font-medium text-white">
+                <span className="h-1.5 w-1.5 rounded-full bg-brand-teal" />
+                MedConcierge Uruguay
+              </span>
+              <h1 className="mt-4 whitespace-pre-line text-2xl font-bold leading-tight text-white sm:text-3xl">
+                MedConcierge{"\n"}Familias
+              </h1>
+              <p className="mt-4 text-sm leading-relaxed text-slate-100/90 sm:text-base">
+                Programa de evaluación y seguimiento independiente para
+                adultos mayores.
+              </p>
+              <Link
+                href="/familias"
+                className="mt-6 inline-block rounded-md bg-white px-6 py-3 text-sm font-semibold text-brand-navy shadow-sm transition-colors hover:bg-brand-sky"
+              >
+                Solicitar servicio
+              </Link>
+            </div>
           </div>
         </div>
       </section>

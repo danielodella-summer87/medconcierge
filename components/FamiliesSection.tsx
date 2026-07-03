@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CheckIcon } from "@/components/icons";
-import familiesImage from "@/public/images/familias-adultos-mayores.jpg";
+import familiesImage from "@/public/images/pareja-familias.avif";
 
 const FEATURES = [
   "Evaluación periódica del estado de salud",
@@ -56,10 +56,10 @@ export default function FamiliesSection() {
           <div className="relative h-56">
             <Image
               src={familiesImage}
-              alt="Adulto mayor siendo acompañado en su día a día"
+              alt="Pareja de adultos mayores acompañada por MedConcierge"
               fill
               placeholder="blur"
-              className="object-cover"
+              className="object-cover object-top"
               sizes="(min-width: 1024px) 480px, 100vw"
             />
           </div>
