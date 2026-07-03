@@ -21,9 +21,9 @@ const SLIDES = [
     align: "left" as const,
   },
   {
-    title: "MedConcierge Viajeros",
+    title: "MedConcierge\nViajeros",
     subtitle: "Para viajar tranquilos",
-    text: "Somos un asistente personal que coordina diferentes actividades médicas, lleva al cliente de la mano, lo aconseja y apoya. Asesoramos y certificamos a viajeros sobre inmunizaciones.",
+    text: "Somos un “asistente personal” que coordina diferentes actividades médicas, lleva al cliente de la mano, lo aconseja y apoya. Asesoramos y certificamos a viajeros sobre inmunizaciones.",
     ctaLabel: "Ver Plan",
     ctaHref: "/viajeros",
     image: viajerosImage,
@@ -31,7 +31,7 @@ const SLIDES = [
     align: "center" as const,
   },
   {
-    title: "Más de 30 años de experiencia",
+    title: "Más de 30 años\nde experiencia",
     subtitle: "avalan nuestro trabajo",
     text: "Somos profesionales de la Salud y nos dedicamos desde hace muchos años al Turismo de Salud y Bienestar en USA.",
     ctaLabel: "Ver Servicios",
@@ -41,7 +41,7 @@ const SLIDES = [
     align: "center" as const,
   },
   {
-    title: "MedConcierge Familias",
+    title: "MedConcierge\nFamilias",
     subtitle: "Servicio de supervisión y cuidado de adultos mayores",
     text: "MedConcierge Familias es el Programa de evaluación y seguimiento independiente para adultos mayores. Es un sistema de visitas mensuales en su lugar de residencia a través de una membresía, consultanos por más información.",
     ctaLabel: "Ver Plan",
@@ -113,7 +113,7 @@ export default function HomeCarousel() {
               isCentered ? "items-center text-center" : "items-start text-left"
             }`}
           >
-            <h1 className="text-2xl font-bold leading-tight text-white sm:text-3xl">
+            <h1 className="whitespace-pre-line text-2xl font-bold leading-tight text-white sm:text-3xl">
               {slide.title}
             </h1>
             <p className="mt-2 text-base font-medium text-brand-sky sm:text-lg">
@@ -156,7 +156,7 @@ export default function HomeCarousel() {
               key={s.title}
               type="button"
               onClick={() => goTo(index)}
-              aria-label={`Ir a la diapositiva ${index + 1}: ${s.title}`}
+              aria-label={`Ir a la diapositiva ${index + 1}: ${s.title.replace(/\n/g, " ")}`}
               aria-current={index === activeIndex}
               className={`h-2.5 rounded-full transition-all ${
                 index === activeIndex
