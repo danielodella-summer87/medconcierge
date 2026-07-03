@@ -1,4 +1,4 @@
-import Hero from "@/components/Hero";
+import HomeCarousel from "@/components/HomeCarousel";
 import AboutSection from "@/components/AboutSection";
 import ServicesSection from "@/components/ServicesSection";
 import FamiliesSection from "@/components/FamiliesSection";
@@ -9,7 +9,7 @@ import ContactSection from "@/components/ContactSection";
 export default function Home() {
   return (
     <>
-      <Hero />
+      <HomeCarousel />
       <AboutSection />
       <ServicesSection />
       <FamiliesSection />
