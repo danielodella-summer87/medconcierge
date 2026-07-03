@@ -29,7 +29,7 @@ export default function AboutSection() {
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-brand-teal">
-            Nuestro ADN
+            Nosotros
           </span>
           <h2 className="mt-3 text-3xl font-bold text-brand-navy sm:text-4xl">
             Nuestro ADN
