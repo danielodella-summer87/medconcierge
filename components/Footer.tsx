@@ -1,9 +1,7 @@
 import Image from "next/image";
 import { CreditCardIcon, PhoneIcon, PinIcon } from "@/components/icons";
 import logoWhite from "@/public/images/medconcierge-logo-white.png";
-
-const PAYMENT_URL =
-  "https://checkout.square.site/pay/6fe35a8a-2400-4345-83b1-d07c802ad2be";
+import { PAYMENT_URL } from "@/lib/constants";
 
 export default function Footer() {
   const year = new Date().getFullYear();

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import TravelersSection from "@/components/TravelersSection";
 import ViajerosForm from "@/components/ViajerosForm";
+import { CreditCardIcon } from "@/components/icons";
+import { PAYMENT_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "MedConcierge Viajeros | MedConcierge",
@@ -48,6 +50,21 @@ export default function ViajerosPage() {
 
           <div className="mt-10">
             <ViajerosForm />
+          </div>
+
+          <div className="mt-6 rounded-xl border border-slate-200 bg-white p-6 text-center">
+            <p className="text-sm text-slate-600">
+              ¿Ya coordinaste tu atención?
+            </p>
+            <a
+              href={PAYMENT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-brand-blue transition-colors hover:text-brand-navy"
+            >
+              <CreditCardIcon className="h-4 w-4" />
+              Realizar pago
+            </a>
           </div>
         </div>
       </section>

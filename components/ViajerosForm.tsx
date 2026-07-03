@@ -167,7 +167,7 @@ export default function ViajerosForm() {
         type="submit"
         className="w-full rounded-md bg-brand-navy px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-blue"
       >
-        Solicitar consulta
+        Enviar consulta
       </button>
     </form>
   );

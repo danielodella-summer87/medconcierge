@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import FamiliasForm from "@/components/FamiliasForm";
 import familiasImage from "@/public/images/familias-evaluacion.jpg";
+import { CreditCardIcon } from "@/components/icons";
+import { PAYMENT_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Plan MedConcierge Familias | MedConcierge",
@@ -47,6 +49,21 @@ export default function FamiliasPage() {
 
           <div className="mt-10">
             <FamiliasForm />
+          </div>
+
+          <div className="mt-6 rounded-xl border border-slate-200 bg-white p-6 text-center">
+            <p className="text-sm text-slate-600">
+              ¿Ya coordinaste el servicio?
+            </p>
+            <a
+              href={PAYMENT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-brand-blue transition-colors hover:text-brand-navy"
+            >
+              <CreditCardIcon className="h-4 w-4" />
+              Realizar pago
+            </a>
           </div>
         </div>
       </section>
