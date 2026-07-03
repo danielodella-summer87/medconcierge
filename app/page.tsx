@@ -1,4 +1,5 @@
 import HomeCarousel from "@/components/HomeCarousel";
+import PartnersLogoCarousel from "@/components/PartnersLogoCarousel";
 import AboutSection from "@/components/AboutSection";
 import ServicesSection from "@/components/ServicesSection";
 import FamiliesSection from "@/components/FamiliesSection";
@@ -10,6 +11,7 @@ export default function Home() {
   return (
     <>
       <HomeCarousel />
+      <PartnersLogoCarousel />
       <AboutSection />
       <ServicesSection />
       <FamiliesSection />
