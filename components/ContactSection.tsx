@@ -6,9 +6,9 @@ import { CheckIcon, PhoneIcon, PinIcon, WhatsAppIcon } from "@/components/icons"
 const CONTACT_INFO = [
   {
     label: "MedConcierge LLC USA",
-    phone: "+1 305 308 9191",
-    address: "2500 Parkview Drive #1219, Hallandale Beach, FL 33009 USA",
-    whatsapp: "https://wa.me/13053089191",
+    phone: "+1 786 346 3592",
+    address: "3670 S Douglas Rd., Miami, Florida 33133 USA",
+    whatsapp: "https://wa.me/17863463592",
   },
   {
     label: "MedConcierge Uruguay SRL",

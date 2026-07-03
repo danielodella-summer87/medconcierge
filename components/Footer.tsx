@@ -18,11 +18,11 @@ export default function Footer() {
             </h3>
             <p className="mt-4 flex items-center gap-2 text-sm">
               <PhoneIcon className="h-4 w-4 flex-shrink-0 text-slate-400" />
-              +1 305 308 9191
+              +1 786 346 3592
             </p>
             <p className="mt-2 flex items-start gap-2 text-sm">
               <PinIcon className="mt-0.5 h-4 w-4 flex-shrink-0 text-slate-400" />
-              2500 Parkview Drive #1219, Hallandale Beach, FL 33009 USA
+              3670 S Douglas Rd., Miami, Florida 33133 USA
             </p>
           </div>
 
