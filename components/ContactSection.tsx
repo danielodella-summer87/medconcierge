@@ -53,7 +53,7 @@ export default function ContactSection() {
             Contacto
           </h2>
           <p className="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
-            Escribinos y un miembro de nuestro equipo se pondrá en contacto a
+            Escríbenos y un miembro de nuestro equipo se pondrá en contacto a
             la brevedad.
           </p>
         </div>
