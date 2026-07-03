@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@/components/icons";
 import consultoraImage from "@/public/images/servicio-auditoria.jpg";
 import viajerosImage from "@/public/images/viajeros-medconcierge.jpg";
@@ -48,13 +48,26 @@ const SLIDES = [
   },
 ];
 
+const AUTOPLAY_INTERVAL_MS = 5000;
+
 export default function HomeCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   const slide = SLIDES[activeIndex];
 
   const goTo = (index: number) => {
     setActiveIndex((index + SLIDES.length) % SLIDES.length);
   };
+
+  useEffect(() => {
+    if (isPaused) return;
+
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % SLIDES.length);
+    }, AUTOPLAY_INTERVAL_MS);
+
+    return () => clearInterval(interval);
+  }, [activeIndex, isPaused]);
 
   return (
     <section
@@ -64,7 +77,11 @@ export default function HomeCarousel() {
       aria-roledescription="carousel"
       aria-label="Presentación de MedConcierge"
     >
-      <div className="relative h-[560px] w-full overflow-hidden bg-brand-navy sm:h-[600px] lg:h-[640px]">
+      <div
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+        className="relative h-[560px] w-full overflow-hidden bg-brand-navy sm:h-[600px] lg:h-[640px]"
+      >
         <Image
           key={slide.image.src}
           src={slide.image}
